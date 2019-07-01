@@ -4,15 +4,24 @@
 	<meta charset = "UTF-8" />
 	<title>Portfolio Matheus V. Reis</title>
 	<script src="//cdn.jsdelivr.net/npm/phaser@3.17.0/dist/phaser.js"></script>
+	<script type="text/javascript" src="instafeed.min.js"></script>
 	<style type = "text/css">
-		body {
+		canvas {
 			margin: 0;
 		}
 	</style>
 </head>
 <body>
-	<<script src = "game.js" type = "text/javascript" charset = "utf-8" async defer></script>
-	<h1> Headline </h1>
-	<p>Paragraph</p>
+	<script type="text/javascript">
+		var feed = new Instafeed({
+			get: '',
+			tagName: '',
+			clientId: '18a58a78c2e345bd92e163f3281457c0'
+		});
+		feed.run();
+	</script>
+	<div id="instafeed"></div>
+	<canvas></canvas>
+	<script src = "backgroundCanvas.js"></script>
 </body>
 </html>
