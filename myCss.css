@@ -21,14 +21,18 @@
   max-height: 25%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 8px;
-  width: 50%;
+  margin-bottom: 12px;
+  width: 50px;
+}
+#profileDiv{
+  text-align: center;
 }
 img {
 	transition: all .3s ease-in-out;
 	border-radius: 2%;
 }
 img:hover{transform: scale(1.1);}
+
 @media screen and (max-width: 600px) {
   .column {
     flex: 50%;
