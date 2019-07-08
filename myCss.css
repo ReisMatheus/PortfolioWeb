@@ -95,13 +95,17 @@ img:hover{transform: scale(1.1);}
 #mySidenav a:hover {
   left: 0; /* On mouse-over, make the elements appear as they should */
 }
-#about {
-  top: 200px;
-  background-color: #4CAF50;
-}
 #contact {
   top: 150px;
   background-color: #555 /* Light Black */
+}
+#git {
+  top: 200px;
+  background-color: #000000;
+}
+#twitter{
+  top: 250px;
+  background-color: #3399ff;
 }
 .modal {
   display: none; /* Hidden by default */
