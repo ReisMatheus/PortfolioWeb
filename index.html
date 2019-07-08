@@ -3,25 +3,44 @@
 <head>
 	<meta charset = "UTF-8" />
 	<title>Portfolio Matheus V. Reis</title>
-	<script src="//cdn.jsdelivr.net/npm/phaser@3.17.0/dist/phaser.js"></script>
-	<script type="text/javascript" src="instafeed.min.js"></script>
-	<style type = "text/css">
-		canvas {
-			margin: 0;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="myCss.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="interaction.js"></script>
 </head>
 <body>
-	<script type="text/javascript">
-		var feed = new Instafeed({
-			get: '',
-			tagName: '',
-			clientId: '18a58a78c2e345bd92e163f3281457c0'
-		});
-		feed.run();
-	</script>
-	<div id="instafeed"></div>
-	<canvas></canvas>
-	<script src = "backgroundCanvas.js"></script>
+	<div class="row">
+		<div class="column">
+			<img src="images/1.jpg">		
+			<img src="images/2.jpg">
+			<img src="images/3.jpg">
+			<img src="images/4.jpg">
+		</div>
+		<div class="column">
+			<img src="images/9.jpg">
+			<img src="images/10.jpg">
+			<img src="images/11.jpg">
+			<img src="images/12.jpg">
+			<img src="images/13.jpg">
+		</div>
+		<div class="column">
+			<img src="images/14.jpg">
+			<img src="images/15.jpg">
+			<img src="images/16.jpg">
+			<img src="images/5.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+		</div>
+	</div>
+	<div id="button">
+		<button id="optButton" type="button" class="btn" onclick="topFunction()"><i class="fa fa-home" aria-hidden="true"></i></button>
+	</div>
+	<div id="mySidenav" class="sidenav">
+		<button id="emailButton"><a href="contact.html" target="_blank" id="contact">email <i class="fa fa-envelope" aria-hidden="true"></i></a></button>
+		<button class="infoButton"><a href="#" id="about">info <i class="fa fa-question-circle" aria-hidden="true"></i></a></button>
+	</div>
+</body>
+<body class="imagesBox">
 </body>
 </html>
