@@ -1,31 +1,30 @@
 <?php
-/*
-THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
-*/
 
-require 'PHPMailer-master/PHPMailerAutoload.php';
+    /* Attempt MySQL server connection. Assuming you are running MySQL
+    server with default setting (user 'root' with no password) */
 
-/*
-*  CONFIGURE EVERYTHING HERE
-*/
+    $link = mysqli_connect("localhost", "root", "", "demo");
 
-// an email address that will be in the From field of the email.
-$fromEmail = 'demo@domain.com';
-$fromName = 'Demo contact form';
+    // Check connection
 
-// an email address that will receive the email with the output of the form
-$sendToEmail = 'matheusmlcr@gmail.com';
-$sendToName = 'Matheus Vieira';
+    if($link === false){
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
 
-// subject of the email
-$subject = 'New message from contact form';
+    // Escape user inputs for security
+    $name = mysqli_real_escape_string($link, $_POST['firstname']);
+    $email = mysqli_real_escape_string($link, $_POST['email']);
+    $message = mysqli_real_escape_string($link, $_POST['message']);
 
-// form field names and their translations.
-// array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message');
+    // attempt insert query execution
+    $sql = "INSERT INTO persons (name, email, message) VALUES ('$name', '$email', '$message')";
 
-// message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
+    if(mysqli_query($link, $sql)){
+        echo "Records added successfully.";
+    } else{
+        echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
 
-// If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+    // close connection
+    mysqli_close($link);
+?>
